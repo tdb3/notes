@@ -8,4 +8,5 @@ https://bitcoinops.org/ provides some recaps and history.  Not sure if there are
 
 Perhaps increased documentation in the `doc` portion of the repo, specific to the functional area of the design, could help.  For example, a design document for P2P might include the current design approach as well as a "historical decisions" or "deprecated approaches" section.  A risk being that documentation and actual code get out of sync.
 
-
+## Rebasing
+Don't perform extraneous rebases.  A rebase invalidates existing ACKs, so once these exist it should only be done if there is a conflict (Drahtbot will complain) or a specific reason (such as a silent conflict). The CI will always rebase on master anyway for its runs (which could be restarted without rebasing if really necessary).
